@@ -20,4 +20,6 @@ int main() {
 
     /* Show result to client */
     printf("%d feet %d inches", finalFoot, finalInch);
+
+    return 0;
 }
