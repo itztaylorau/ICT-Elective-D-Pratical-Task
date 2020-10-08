@@ -18,7 +18,7 @@ int main()
     for (i = startvalue; i <= endvalue; i++){
        printf("%d\n",i);
     }} else if(startvalue > endvalue) {
-    for (i = endvalue; i <= startvalue; i--){
+    for (i = startvalue; i >= endvalue; i--){
        printf("%d\n",i);
        }} else {
         printf("%d\n", startvalue);
