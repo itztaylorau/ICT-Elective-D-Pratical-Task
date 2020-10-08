@@ -7,7 +7,7 @@ int main() {
     int i;
     float one, two, result;
 
-    /* Ask for values and calculate*/
+    /* Ask for values and calculate */
     for(i = 1; i <= 3; i++) {
 
             printf("Mark of student %d Test 1: ", i);
