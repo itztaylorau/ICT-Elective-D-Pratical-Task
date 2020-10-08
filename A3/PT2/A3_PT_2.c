@@ -6,7 +6,7 @@ int main() {
 
     /* Declare constants */
     int cm, finalFoot, finalInch;
-    double inch, foot;
+    int inch, foot;
 
     /* Ask client for value */
     printf("Please enter the length in cm: ");
