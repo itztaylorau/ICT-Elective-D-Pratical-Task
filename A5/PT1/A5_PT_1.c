@@ -3,30 +3,26 @@
 
 int main()
 {
+
+    /* Declare constant */
     int i, startvalue, endvalue;
 
-
+    /* Asking for value */
     printf("Starting value: ");
     scanf("%d", &startvalue);
     printf("Terminating value: ");
     scanf("%d", &endvalue);
 
-    if(startvalue < en`dvalue) {
-
-    for (i = startvalue; i <= endvalue; i++)
+    /* Start processing */
+    if(startvalue < endvalue) {
+    for (i = startvalue; i <= endvalue; i++){
        printf("%d\n",i);
-
-    } else if(startvalue > endvalue) {
-
-    for (i = endvalue; i <= startvalue; i--)
+    }} else if(startvalue > endvalue) {
+    for (i = endvalue; i <= startvalue; i--){
        printf("%d\n",i);
-
-       } else {
-
+       }} else {
         printf("%d\n", startvalue);
-
        }
-
 
     return 0;
 }
