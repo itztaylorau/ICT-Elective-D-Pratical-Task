@@ -3,12 +3,11 @@
 
 int main() {
 
-    int sum, i, ti;
+    int sum, i;
 
     for(i = 1; i <= 100 ; i++){
-
-        ti = i * i;
-        sum = sum + ti;
+            i = i + 1;
+        sum = sum + i;
 
 
     }
