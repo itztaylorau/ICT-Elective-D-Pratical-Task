@@ -1,19 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
-
+int main()
+{
     /* Declare constant */
-    int i, ii;
+    int row, column;
 
-    /* Start output */
-    for(i = 9; i > 0; i--){
-    for(ii = i; ii > 0; ii--){
-
-        printf("%d", ii);
-
-    }
+    for (row = 9; row >= 1; row--) {
+        for (column = 1; column <= row; column++) {
+            printf("%d",column);
+        }
         printf("\n");
     }
+
     return 0;
 }
