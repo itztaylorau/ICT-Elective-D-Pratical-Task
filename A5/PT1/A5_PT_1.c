@@ -15,10 +15,10 @@ int main()
 
     /* Start processing */
     if(startvalue < endvalue) {
-    for (i = startvalue; i <= endvalue; i++){
+    for (i = startvalue; i <= endvalue; i++) {
        printf("%d\n",i);
     }} else if(startvalue > endvalue) {
-    for (i = startvalue; i >= endvalue; i--){
+    for (i = startvalue; i >= endvalue; i--) {
        printf("%d\n",i);
        }} else {
         printf("%d\n", startvalue);
