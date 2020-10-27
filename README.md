@@ -3,4 +3,4 @@
 
 ---
 
-<center><i>itztaylorau Studio - Say it now.
+<p align="center"><i>itztaylorau Studio - Say it now.</p></i>
