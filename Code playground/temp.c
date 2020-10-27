@@ -2,15 +2,11 @@
 #include <stdlib.h>
 int main() {
 	
-	char first_char, second_char;
+	float a = 68.25;
+	double b = 68.25;
 
-	printf("Please input the first character: ");
-	scanf("%c", &first_char);
-	printf("%c", first_char);
-
-	printf("Please input the second character: ");
-	scanf(" %c", &second_char);
-	printf("%c", second_char);
+	printf("%.6f", a);
+	printf("%.6f", b);
 
 	return 0;
 }
