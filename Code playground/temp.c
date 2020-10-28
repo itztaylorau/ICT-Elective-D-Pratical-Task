@@ -1,12 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 int main() {
 	
-	float a = 68.25;
-	double b = 68.25;
-
-	printf("%.6f", a);
-	printf("%.6f", b);
+	printf("%f\n", fabs(1.0));
+	printf("%f\n", fabs(-5.3));
 
 	return 0;
 }
