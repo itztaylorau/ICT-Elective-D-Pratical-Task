@@ -3,8 +3,10 @@
 #include <math.h>
 int main() {
 	
-	printf("%f\n", fabs(1.0));
-	printf("%f\n", fabs(-5.3));
+	int num, upper = 13, lower = 5;
+
+	num = (rand()% (upper + 1 - lower) + lower);
+	printf("%d\n", num);
 
 	return 0;
 }
