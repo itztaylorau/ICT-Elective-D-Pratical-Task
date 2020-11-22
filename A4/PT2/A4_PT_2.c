@@ -1,32 +1,39 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int discriminant;
 
 int main() {
-    /* declare constant */
-    int alpha, beta, charlie;
-    float root1, root2;
-
-    /* asking user input value */
-    printf("A: ");
-    scanf("%d", &alpha);
-    printf("B: ");
-    scanf("%d", &beta);
-    printf("C: ");
-    scanf("%d", &charlie);
-
-    /* calculating part */
-    /* calculating root1 */
-    root1 = (-beta + (sqrt((beta * beta) - 4 * alpha * charlie))) / (2 * alpha);
-    /* calculating root2 */
-    root2 = (-beta - (sqrt((beta * beta) - 4 * alpha * charlie))) / (2 * alpha);
-
-    /* showing calculated result to client */
-    if(root1 < 0.0 || root2 < 0.0){
-        printf("Root 1 = %.3f", root1);
-        printf("\nRoot 2 = %.3f", root2);
-    }else{
-        printf("No real roots");
-    }
-    return 0;
+   input_coefficients();
+   evaluate_discriminant();
+   evaluate_roots();
+   output_results();
 }
+void input_coefficients() {
+   float a, b, c;
+   printf("A: ");
+   scanf("%f", &a);
+   printf("B: ");
+   scanf("%f", &b);
+   printf("C: ");
+   scanf("%f", &c);
+   evaluate_discriminant();
+   evaluate_roots();
+}
+void evaluate_discriminant() {
+   discriminant = pow(b, 2) - 4 * a * c;
+}
+void evaluate_roots() {
+    if (discriminant >= 0) {
+        root1 = (- b + sqrt(discriminant)) / (2 * a);
+        root2 = (- b - sqrt(discriminant)) / (2 * a);
+}}
+
+void output_results() {
+    if (discriminant >= 0) {
+        printf("Root 1 = %.3f\n", root1);
+        printf("Root 2 = %.3f\n", root2);
+   }else{
+        printf("No real roots\n");
+}}
+

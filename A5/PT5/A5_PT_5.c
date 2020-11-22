@@ -4,16 +4,15 @@
 int main(){
 
 	char input;
-    int continueflag;
+    int continueflag = 1;
 
-	printf("Continue <Y/N>: ");
-	scanf("%c", input);
-	continueflag = 1;
-	while(continueflag) {
-            if(input != 'Y' || 'N'){
-                printf("Invalid response! Please try again");
-                fflush(stdin);
-                scanf("%c", input);
-            }else{continueflag = 0;}
-	}
-}
+    while(continueflag) {
+        printf("Continue <Y/N>: ");
+        scanf("%c", &input);
+        if((input == 'Y') || (input == 'N')){
+            continueflag = 0;
+            printf("You have made a valid response.\n");
+        }else{
+            printf("Invalid response! Please try again\n");
+            fflush(stdin);
+        }}}
