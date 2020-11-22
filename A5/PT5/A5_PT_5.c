@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(){
+int main() {
 
 	char input;
     int continueflag = 1;
@@ -15,4 +15,5 @@ int main(){
         }else{
             printf("Invalid response! Please try again\n");
             fflush(stdin);
-        }}}
+        }}
+    return 0;}
