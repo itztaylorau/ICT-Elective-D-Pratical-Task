@@ -1,38 +1,39 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-int discriminant;
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
 
-void input_coefficients(float *a, float *b, float *c) {
-    printf("A: ");
-    scanf("%f", a);
-    printf("B: ");
-    scanf("%f", b);
-    printf("C: ");
-    scanf("%f", c);
-}
-void evaluate_discriminant(float a, float b, float c) {
-   discriminant = pow(b, 2) - 4 * a * c;
+int alpha, beta, charlie;
+float root1, root2;
+
+void calRoots(int alpha, int beta, int charlie){
+    printf("%d, %d, %d")
+    root1 = (-beta + (sqrt((beta * beta) - 4 * alpha * charlie))) / (2 * alpha);
+    root2 = (-beta - (sqrt((beta * beta) - 4 * alpha * charlie))) / (2 * alpha);
+    findRoots(root1, root2);
 }
 
-void evaluate_roots(fhttps://buzzorange.com/techorange/2020/05/18/ncov2019-live-website/loat a, float b) {
-    if (discriminant >= 0) {
-        root1 = (- b + sqrt(discriminant)) / (2 * a)
-        root2 = (- b - sqrt(discriminant)) / (2 * a)
-}}
-
-void output_results() {
-    if (discriminant >= 0) {
-        printf("Root 1 = %.3f\n", root1);
-        printf("Root 2 = %.3f\n", root2);
+void findRoots(float root1, float root2){
+    if(root1 < 0.0 || root2 < 0.0){
+        printf("Root 1 = %.3f", root1);
+        printf("\nRoot 2 = %.3f", root2);
     }else{
-        printf("No real roots\n");
-}}
+        printf("Root 1 = %.3f", root1);
+        printf("\nRoot 2 = %.3f\n", root2);
+        printf("No real roots");
+    }
+}
 
 int main() {
-    float a, b, c;
-    input_coefficients(&a, &b, &c);
-    evaluate_discriminant(a, b, c);
-    evaluate_roots(a, b);
-    output_results();
+
+    printf("A: ");
+    scanf("%d", &alpha);
+    printf("B: ");
+    scanf("%d", &beta);
+    printf("C: ");
+    scanf("%d", &charlie);
+
+    calRoots(alpha, beta, charlie);
+
+
+    return 0;
 }
