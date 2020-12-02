@@ -7,7 +7,7 @@ int count, i;
 void main(){
     num[1]=1;
     num[2]=1;
-    printf("Number of fibonacci numbers required  (maximum 20)");
+    printf("Number of fibonacci numbers required (maximum 20): ");
     scanf("%d",&count);
     for(i=3;i<=count;i++){
         num[i]=num[i-1]+num[i-2];
