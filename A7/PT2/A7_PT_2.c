@@ -16,8 +16,8 @@ void main(){
         printf("%d\t",num[i]);
         if(i>1){
             printf("%.4f",(float) num[i]/num[i-1]);
-            printf("\n");
         }
+        printf("\n");
     }
     return 0;
 }
