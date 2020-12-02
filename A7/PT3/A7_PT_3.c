@@ -1,11 +1,10 @@
 #include <stdio.h>
-
 #include <stdlib.h>
-
 #include <string.h>
 
 int main() {
-    char *name[] = {"Alice", "Mary", "John", "Sakura", "Kathy", "Hinata", "Miyawaki", "John", "Miyawaki", "Katy", "Sakura", "kathy"};
+    char *name[] = {"Alice", "Mary", "John", "Sakura", "Kathy", "Hinata",
+                    "Miyawaki", "John", "Miyawaki", "Katy", "Sakura", "kathy"};
     char target_name[10];
     int i, position, continueflag;
 
