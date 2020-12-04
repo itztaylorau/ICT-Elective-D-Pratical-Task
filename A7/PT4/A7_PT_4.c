@@ -15,5 +15,4 @@ int main() {
     }
     printf("The minimum in the array is %d\n", min_value);
     return 0;
-
 }
