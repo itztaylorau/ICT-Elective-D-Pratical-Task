@@ -2,10 +2,8 @@
 #include <stdlib.h>
 int main() {
 
-    int raw_seatInfo[3][4];
-    int x, y,tempData, revenue;
+    int x, y,tempData, revenue, raw_seatInfo[3][4], priceClass[3] = {5000, 2500, 1000};
     char *displayClass[3] = {"First", "Business", "Economy"};
-    int priceClass[3] = {5000, 2500, 1000};
 
     for(x = 0; x <= 2; x++){
         for(y = 0; y <= 3; y++){
@@ -24,8 +22,7 @@ int main() {
             printf("%s class:\t", displayClass[x]);
             for(y = 0; y <= 3; y++){
                 printf("%d\t", raw_seatInfo[x][y]);
-    }
-    printf("\n");
+    }printf("\n");
     }
     for(x = 0; x <= 2; x++){
         for(y = 0; y <= 3; y++){
