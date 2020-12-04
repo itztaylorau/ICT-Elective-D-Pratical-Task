@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define SIZE 6;
+#define SIZE 6
 int main() {
 
     int num[6] = {97, 83, 50, 12, 36, 85};
