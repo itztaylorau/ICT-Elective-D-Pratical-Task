@@ -1,6 +1,6 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
 int alpha, beta, charlie;
 float root1, root2;
@@ -28,9 +28,6 @@ int main() {
     scanf("%d", &beta);
     printf("C: ");
     scanf("%d", &charlie);
-
     calRoots();
-
-
     return 0;
 }
