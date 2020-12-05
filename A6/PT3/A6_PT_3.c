@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <math.h>
 
-int alpha, beta, charlie;
 float root1, root2;
 
 void calRoots(int *alpha, int *beta, int *charlie){
@@ -12,7 +11,6 @@ void calRoots(int *alpha, int *beta, int *charlie){
 }
 
 void findRoots(){
-    calRoots(&alpha, &beta, &charlie);
     if(root1 < 0.0 || root2 < 0.0){
         printf("\nRoot 1 = %.3f", root1);
         printf("\nRoot 2 = %.3f", root2);
@@ -22,12 +20,14 @@ void findRoots(){
 }
 
 int main() {
+    int alpha, beta, charlie;
     printf("A: ");
     scanf("%d", &alpha);
     printf("B: ");
     scanf("%d", &beta);
     printf("C: ");
     scanf("%d", &charlie);
-    findRoots();
+    calRoots(&alpha, &beta, &charlie);
+    findRoots(&root1, &root2);
     return 0;
 }
