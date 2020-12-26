@@ -22,7 +22,8 @@ void receiveData() {
 }
 
 void calculateAverage() {
-    int i, tempSum = 0;
+    int i;
+    float tempSum = 0;
     for(i = 0; i < 10; i ++){
         tempSum = tempSum + marks[i];
     }
