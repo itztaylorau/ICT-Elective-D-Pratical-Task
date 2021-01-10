@@ -7,7 +7,7 @@ int main() {
     char input[10];
     int i, status;
     printf("Please enter the name you want to search: ");
-    scanf("%s", &input);Sakura
+    scanf("%s", &input);
     for(i = 0; i < 5; i++){
         if(strcmp(names[i], input) == 0){
             printf("Required entry exists at index %d.", i);
