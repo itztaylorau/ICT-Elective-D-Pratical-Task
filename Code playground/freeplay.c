@@ -1,13 +1,16 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-int main() {
-
-    char *name[] = {"Peter", "Mary", "John", "Bob", "Kathy"};
-    int i;
-
-    for(i = 0; i < 6; i++){
-        printf("%s\n", name[i]);
-    }
-return 0;
+int f1(int *x){
+ *x=*x*2;
+ printf("*x=%d\n", *x);
+ return *x;
 }
+void f2(int x){
+ x=f1(&x);
+ x=x*2;
+ printf("x=%d\n", x);
+}
+void main(){
+ int x=5;
+ f2(x);
+ printf("x=%d\n", x);
+}
+
