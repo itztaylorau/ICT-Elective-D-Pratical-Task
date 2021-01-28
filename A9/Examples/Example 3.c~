@@ -1,0 +1,19 @@
+/* Chapter A9 Example 3 */
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int i;
+    FILE *outfile;
+    char fruit_name[30];
+    float fruit_price;
+
+    outfile = fopen("X:\\Output.txt", "w");
+    for (i = 0; i < 5; ++i){
+	    printf("Fruit %d name: ", i);
+	    scanf("%s", fruit_name);
+	    printf("Fruit %d price: ", i);
+	    scanf("%f", fruit_price);
+
+	    fprintf(outfile, "%s\t%f\n");
+}
