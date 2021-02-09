@@ -1,23 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <strings.h>
+#include <ctype.h>
 
 int main() {
+    char user_input[80];
+    int i = 0, correct_stats = 0;
 
-    char word1[80], word2[80];
-    int i, length;
+    printf("Enter a word: ");
+    gets(user_input);
 
-    printf("Enter a word:");
-    gets(word1);
-
-    length = strlen(word1);
-
-    for(i = 0; i < length; i++){
-        if(islower(word[i])){
-            word[i]-=32;
+    for(i = 0; i <= strlen(user_input); ++i){
+        //Check if characters are match with each other (tolower() is used for convert all character to lowercase temporarily)
+        if(tolower(user_input[i]) == tolower(user_input[strlen(user_input) - 1 - i])){
+            correct_stats = correct_stats + 1;
         }
-        word2[length - 1 - i]
     }
 
-}
+    if(correct_stats == strlen(user_input)){
+        printf("%s is a palindrome.", user_input);
+    }else{
+        printf("%s is not a palindrome.", user_input);
+    }
 
+    return 0;
+}
