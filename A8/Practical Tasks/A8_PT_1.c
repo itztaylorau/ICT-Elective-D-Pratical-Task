@@ -15,4 +15,6 @@ int main() {
     for(i = strlen(word) - 1; i >= 0; --i){
         printf("%c", word[i]);
     }
+
+    return 0;
 }
