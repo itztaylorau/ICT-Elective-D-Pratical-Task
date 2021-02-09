@@ -10,9 +10,9 @@ int main() {
     printf("Enter a word: ");
     gets(word);
 
-    for (i = strlen(word) - 1; i >= 0; i--){
-        printf("The word reversed is %c", word[i]);
-    }
-return 0;
+    printf("The word reversed is ");
 
+    for(i = strlen(word) - 1; i >= 0; --i){
+        printf("%c", word[i]);
+    }
 }
