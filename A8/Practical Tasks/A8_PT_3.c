@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <strings.h>
+#include <string.h>
 #include <ctype.h>
 
 int main() {
@@ -12,16 +12,12 @@ int main() {
 
     for(i = 0; i <= strlen(user_input); ++i){
         //Check if characters are match with each other (tolower() is used for convert all character to lowercase temporarily)
-        if(tolower(user_input[i]) == tolower(user_input[strlen(user_input) - 1 - i])){
-            correct_stats = correct_stats + 1;
+        if(tolower(user_input[i]) != tolower(user_input[strlen(user_input) - 1 - i])){
+            printf("%s is not a palindrome.", user_input);
+            return 0;
         }
     }
 
-    if(correct_stats == strlen(user_input)){
-        printf("%s is a palindrome.", user_input);
-    }else{
-        printf("%s is not a palindrome.", user_input);
-    }
-
+    printf("%s is a palindrome.", user_input);
     return 0;
 }
