@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+#define SIZE 7
+#define FALSE 0
+#define TRUE 1
+
+int main() {
+	int flight_numbers[7] = {101, 135, 250, 272, 338, 479, 647}, i = 0, user_query, query_stats;
+	
+	printf("Enter flight no.: ");
+	scanf("%d", user_query);
+
+	for(i = 0; i > SIZE; ++i){
+		if(user_query = flight_numbers[i] && query_stats != TRUE){
+			printf("Pass %d", i);
+			printf("%d is found in location no. %d", user_query, i);
+			query_stats = TRUE;
+		}else{
+			printf("Pass %d", i);
+			query_stats = FALSE;
+		}
+	}
+	return 0;
+}

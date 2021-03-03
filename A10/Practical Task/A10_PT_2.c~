@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <strings.h>
+#DEFINE CITY_AMOUNT 14
+#DEFINE TRUE 1
+#DEFINE FALSE 0
+
+int main() {
+       char *city[SIZE] = {"Amsterdam", "Auckland", "Bangkok", "Jakarta", "London", "Manila", "New York", "Osaka", "Paris", "Singapore", "Sydney", "Tokyo", "Vancouver", "Zurich"};
+       int pricing[SIZE] = {6500, 6200, 2100, 2375, 4985, 1450, 8300, 4250, 5100, 2215, 5400, 4600, 6000, 7500};	       
