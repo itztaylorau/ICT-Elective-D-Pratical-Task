@@ -1,27 +1,23 @@
-#include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
-
-char* scoreConvert(int score){
-    char buffer[10];
-    if(strlen(score) == 2){
-        char buffer2[10] = "0";
-        itoa(score, buffer, 10);
-        strcat(buffer2, buffer);
-        printf("A");
-        return buffer2;
-    }else if(strlen(score) == 1){
-        char buffer2[10] = "00";
-        itoa(score,buffer, 10);
-        strcat(buffer2, buffer);
-        printf("B");
-        return buffer2;
-    }else{
-        return itoa(score, buffer, 10);
+#include <stdlib.h>
+#include <strings.h>
+#define arraySize 5
+char toString(int integerScore){
+    char stringScore[5];
+    itoa(integerScore, stringScore, 10);
+    if(integerScore > 0 && integerScore < 10){
+        strcat("00", stringScore);
+        printf("%s", stringScore);
+    }else if(integerScore > 9 && integerScore < 100){
+        strcat("0", stringScore);
     }
 }
 
 int main(){
-    printf("%s", scoreConvert(65));
-    return 0;
+    char *name[5] = {"Peter", "Mary", "John", "Bob", "Kathy"}, conduct[5] = {'B', 'C', 'A', 'C', 'B'};
+    int i, studentNumber[5] = {1001, 1002, 1003, 1004, 1005}, score[5] = {80, 0, 7, 100, 49};
+
+    for(i = 0; i < arraySize; ++i){
+        printf("%s\t%d%s%c\n", name[i], studentNumber[i], toString(score[i]), conduct[i]);
+    }
 }
