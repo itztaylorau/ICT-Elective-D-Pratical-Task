@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <strings.h>
 #define fruit 5
-int accumulatedSum(char *lineString){
+int accumulatedSum(char lineString[10]){
     int i, digitSection;
-    char *tmp;
-    for(i = 0; i < strlen(lineString); ++i){
-        if(isdigit(lineString[i]) > 0 && digitSection == 1){
-            strcpy(tmp, lineString[i]);
-            printf("yay\n");
-           digitSection = 1;
+    char tmpStackString[10];
+    for(i = 0; i <= strlen(lineString); ++i){
+        if(isdigit(lineString[i])){
+            strcpy(lineString[i], lineString[i]);
+            printf("(Y)\t%s ", lineString[i]);
         }else{
-        printf("nay\n");
+            printf("(N)\t%c ", lineString[i]);
         }
     }
 }
