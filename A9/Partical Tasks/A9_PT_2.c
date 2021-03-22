@@ -13,8 +13,8 @@ int accumulatedSum(char lineString[10]){
             }
         }
     }
-    for(j = i; j <= strlen(lineString); ++j){
-        printf("(L)\t%c\n", tmpStackString[i]);
+    for(j = 0; j <= strlen(lineString); ++j){
+        printf("(LK)\t%c\n", tmpStackString[j]);
             }
 }
 
