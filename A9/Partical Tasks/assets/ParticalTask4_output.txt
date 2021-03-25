@@ -1,0 +1,4 @@
+Apple       4.0
+Orange	     2.8
+Pineapple  27.0
+Strawberry 35.9
