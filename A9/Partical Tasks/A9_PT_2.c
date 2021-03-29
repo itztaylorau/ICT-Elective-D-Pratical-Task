@@ -1,31 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <strings.h>
-char storedResult[5][30];
-int i;
-void takePrice(char *inputData){
-    int j, k;
-    char priceStack[5][10];
-    for(j = 0; j <= strlen(inputData); ++j){
-        if(isdigit(inputData[j])){
-                for(k = 0; k < 10; ++k){
-                   priceStack[i][k] = inputData[j];
-                }
+int main()
+{
+    char line_string[20],money[6];
+    FILE *infile;
+    float price,total=0;
 
-        }
+    infile = fopen("assets\\ParticalTask2_source.txt", "r");
+
+    while (fgets(line_string, 20, infile) !=NULL) {
+        printf("%s", line_string);
+        strncpy(money,&line_string[10],5);
+        price=atof(money);
+        total=total+price;
     }
-    printf("AAA %s\n", priceStack[i]);
-}
-int main(){
-    FILE *inFile;
-    inFile = fopen("assets\\ParticalTask2_source.txt", "r");
-    char readResult[20];
-    while(fgets(readResult, 20, inFile) != NULL){
-        printf("%s", readResult);
-        strcpy(storedResult[i], readResult);
-        takePrice(storedResult[i]);
-        ++i;
-    }
-    fclose(inFile);
+
+    printf("\nTotal cost = %.1f\n",total);
+
+    fclose(infile);
     return 0;
 }
