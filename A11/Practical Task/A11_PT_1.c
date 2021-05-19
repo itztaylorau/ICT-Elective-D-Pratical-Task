@@ -50,7 +50,7 @@ void displayRecord(){
 }
 //Menu
 void menu(){
-    printf("1. Add date and time\n");
+    printf("\n1. Add date and time\n");
     printf("2. Delete most recent call\n");
     printf("3. Show call register\n");
     printf("4. Exit\n");
