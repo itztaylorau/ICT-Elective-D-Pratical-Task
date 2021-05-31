@@ -2,17 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #define queueSize 4
-char timeQueue[queueSize][5], citizenQueue[queueSize][30];
+char timeQueue[queueSize][6], citizenQueue[queueSize][30];
 int head = 0, tail = 0;
-
-/* Start of Maintainence module */
-void mtem() {
-  int i;
-  for(i = 0; i < queueSize; ++i){
-    printf("%d timeQueue: %s\n", i, timeQueue[i]);
-    printf("Head: %d, Tail: %d\n", head, tail);
-  }
-}/*End of Maintainence module */
 
 void displayQueue(){
   int i;
@@ -27,44 +18,56 @@ void initQueue(){
       printf(timeQueue);
       strcpy(citizenQueue[i], "");
   }
-  mtem();
-  //displayQueue();
+  displayQueue();
 }
-const char queue(char time[5], char citizen[30]){
+void queue(char time[5], char citizen[30]){
   if(tail >= queueSize){
     printf("The queue is full.\n");
   }else{
     strcpy(timeQueue[tail], time);
-          printf("\nAA %s\n", timeQueue);
     strcpy(citizenQueue[tail], citizen);
     tail += 1;
-    mtem();
-    //displayQueue();
+    displayQueue();
 
   }
 
 }
-/*void dequeue(const char citizen){
+void dequeue(char citizen[30]){
   int i, cmpResult;
+    if(head <= tail){
   for(i = 0; i < queueSize; ++i){
     cmpResult = strcmp(citizen, citizenQueue[i]);
+    //printf("%d", cmpResult);
     if(cmpResult == 0){
       strcpy(citizenQueue[i], "");
       strcpy(timeQueue[i], "");
     }
   }
-}*/
+  head -= 1;
+  displayQueue();
+  }else{
+    printf("The queue is empty.");
+  }
+}
 int main() {
   initQueue();
   queue("10:00", "Ho Alex");
-        printf("\nTail is %d\n", tail);
+    printf("head: %d\n", head);
   queue("10:15", "Wong Mary");
-  //dequeue("Ho Alex");
-  //queue("10:30", "Lee Nicole");
-  //dequeue("Wong Mary");
-  //queue("10:45", "Au Stuart");
-  //queue("11:00", "Cheng Michelle");
-  //dequeue("Lee Nicole");
-  //`dequeue("Au Stuart");
+    printf("head: %d\n", head);
+  dequeue("Ho Alex");
+    printf("head: %d\n", head);
+  queue("10:30", "Lee Nicole");
+    printf("head: %d\n", head);
+  dequeue("Wong Mary");
+    printf("head: %d\n", head);
+  queue("10:45", "Au Stuart");
+    printf("head: %d\n", head);
+  queue("11:00", "Cheng Michelle");
+    printf("head: %d\n", head);
+  dequeue("Lee Nicole");
+    printf("head: %d\n", head);
+  dequeue("Au Stuart");
+    printf("head: %d\n", head);
   return 0;
 }
