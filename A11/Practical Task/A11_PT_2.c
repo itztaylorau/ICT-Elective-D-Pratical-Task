@@ -52,24 +52,14 @@ void dequeue(char citizen[30]){
 int main() {
   initQueue();
   queue("10:00", "Ho Alex");
-
   queue("10:15", "Wong Mary");
-
   dequeue("Ho Alex");
-
   queue("10:30", "Lee Nicole");
-
   dequeue("Wong Mary");
-
   queue("10:45", "Au Stuart");
-
   queue("11:00", "Cheng Michelle");
-
   dequeue("Lee Nicole");
-
   dequeue("Au Stuart");
-
   dequeue("");
-
   return 0;
 }
