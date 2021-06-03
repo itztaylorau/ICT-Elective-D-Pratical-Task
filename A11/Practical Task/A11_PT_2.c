@@ -15,14 +15,14 @@ void initQueue(){
   int i;
   for(i = 0; i < queueSize; ++i){
       strcpy(timeQueue[i], "");
-      printf(timeQueue);
       strcpy(citizenQueue[i], "");
   }
   displayQueue();
 }
 void queue(char time[5], char citizen[30]){
   if(tail >= queueSize){
-    printf("The queue is full.\n");
+    printf("\nThe queue is full.\n");
+    displayQueue();
   }else{
     strcpy(timeQueue[tail], time);
     strcpy(citizenQueue[tail], citizen);
@@ -34,40 +34,42 @@ void queue(char time[5], char citizen[30]){
 }
 void dequeue(char citizen[30]){
   int i, cmpResult;
-    if(head <= tail){
-  for(i = 0; i < queueSize; ++i){
-    cmpResult = strcmp(citizen, citizenQueue[i]);
-    //printf("%d", cmpResult);
-    if(cmpResult == 0){
-      strcpy(citizenQueue[i], "");
-      strcpy(timeQueue[i], "");
-    }
-  }
-  head -= 1;
-  displayQueue();
-  }else{
-    printf("The queue is empty.");
+    if(head < tail){
+      for(i = 0; i < queueSize; ++i){
+        cmpResult = strcmp(citizen, citizenQueue[i]);
+        //printf("%d", cmpResult);
+        if(cmpResult == 0){
+          strcpy(citizenQueue[i], "");
+          strcpy(timeQueue[i], "");
+        }
+      }
+      head += 1;
+      displayQueue();
+    }else if(head  == tail){
+      printf("The queue is empty.\n");
   }
 }
 int main() {
   initQueue();
   queue("10:00", "Ho Alex");
-    printf("head: %d\n", head);
+
   queue("10:15", "Wong Mary");
-    printf("head: %d\n", head);
+
   dequeue("Ho Alex");
-    printf("head: %d\n", head);
+
   queue("10:30", "Lee Nicole");
-    printf("head: %d\n", head);
+
   dequeue("Wong Mary");
-    printf("head: %d\n", head);
+
   queue("10:45", "Au Stuart");
-    printf("head: %d\n", head);
+
   queue("11:00", "Cheng Michelle");
-    printf("head: %d\n", head);
+
   dequeue("Lee Nicole");
-    printf("head: %d\n", head);
+
   dequeue("Au Stuart");
-    printf("head: %d\n", head);
+
+  dequeue("");
+
   return 0;
 }
