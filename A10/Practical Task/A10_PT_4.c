@@ -1,30 +1,39 @@
+//Credit: Kinson1012
 #include <stdio.h>
 #include <stdlib.h>
-#include <strings.h>
-#define arrayLength 10
-char swap(char one[], char two[]){
-    char tmp[255];
+#include <string.h>
+#define N 10
 
-    strcpy(tmp, one);
-    strcpy(one, two);
-    strcpy(two, tmp);
+void swap_string(char x[10], char y[10])
+{
+    char temp[10];
+
+    strcpy(temp,y);
+    strcpy(y,x);
+    strcpy(x,temp);
 }
-int main(){
-    char *names[10] = {"PETER", "MARY", "JOHN", "BOB", "KATHY", "DAVID", "ALAN", "SUSAN", "FIONA", "WILLIAM"}, *tmp[1];
-    int i, j;
+
+int main()
+{
+    char name[10][10] = {"PETER", "MARY", "JOHN", "BOB", "KATHY","DAVID", "ALAN", "SUSAN", "FIONA", "WILLIAM"};
+    int i, j, k;
+
     printf("Initial: ");
-    for(i = 0; i < arrayLength; ++i){
-        printf("%s\t", names[i]);
-    }
+    for (k = 0; k < N; k++)
+        printf("%s\t", name[k]);
     printf("\n");
-    for(j = 1; j < arrayLength; ++j){
-        for(i = 0; i < arrayLength; ++i){
-            if(strcmp(names[i], names[i + 1]) > 0){
-                printf("%s %s\n", names[i], names[i + 1]);
-                swap(names[i], names[i + 1]);
-            }else{
-                printf("!\n");
-            }
-        }
+
+    for (j = 1; j <= N - 1; j++) {
+        printf("Pass %d : ", j);
+
+        for (i = 1; i <= N - j; i++)
+            if (strcmp(name[i - 1],name[i])==1)
+               swap_string(name[i - 1], name[i]);
+
+        for (k = 0; k < N; k++)
+            printf("%s\t", name[k]);
+        printf("\n");
     }
+
+    return 0;
 }
